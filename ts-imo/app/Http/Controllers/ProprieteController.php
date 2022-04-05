@@ -46,9 +46,9 @@ class ProprieteController extends Controller
             'adressse'=>$request->adressse,
             'proprietaite_id'=>$request->proprietaite_id,
             'typese_propriete_id'=>$request->typese_propriete_id,
-            'quartier_id '=>$request->quartier_id 
+            'quartier_id'=>$request->quartier_id 
         ]);
-        return redirect('show');
+        return redirect('showe');
     }
 
     /**
@@ -65,13 +65,14 @@ class ProprieteController extends Controller
             'proprietes'=>$proprietes
     ]);
     }
-    public function detail($id)
+    public function detaille($id)
     {
         $proprietes=propriete::find($id);
        
         return view('proprietes.detail',[
             'proprietes'=>$proprietes
         ]);
+        return view('proprietes.detail');
     }
     public function ajouter(){
          $proprietaite= proprietaite::all();

@@ -39,26 +39,26 @@
     </div>
 
     <div class="mb-3 m-5">
-    <select class="form-select" aria-label="Default select example">
+    <select class="form-select" aria-label="Default select example" name="proprietaite_id">
   <option selected>proprietaire</option>
   @foreach($proprietaite as $proprietaite)
-  <option value="{{$proprietaite->id}}"name="proprietaite_id">{{$proprietaite->prenom}}</option>
+  <option value="{{$proprietaite->id}}">{{$proprietaite->prenom}}</option>
   @endforeach
 </select>
-    
+   </div>
     <div class="mb-3 m-5">
-    <select class="form-select" aria-label="Default select example">
+    <select class="form-select" aria-label="Default select example" name="typese_propriete_id">
   <option selected>type propriete</option>
   @foreach($typese_propriete as $typese_propriete)
-  <option value="{{$typese_propriete->id}}"name="typese_propriete_id">{{$typese_propriete->libelet}}</option>
+  <option value="{{$typese_propriete->id}}">{{$typese_propriete->appartement}}</option>
   @endforeach
 </select>
     </div>
     <div class="mb-3 m-5">
-    <select class="form-select" aria-label="Default select example">
+    <select class="form-select" aria-label="Default select example" name="quartier_id">
   <option selected>quartier</option>
   @foreach($quartier as $quartier)
-  <option value="{{$quartier->id}}"name="quartier">{{$quartier->libelet}}</option>
+  <option value="{{$quartier->id}}">{{$quartier->libelet}}</option>
   @endforeach
 </select>
     </div>
