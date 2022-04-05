@@ -21,7 +21,8 @@ return new class extends Migration
             $table->string('nombredepiece');
             $table->string('adressse');
             $table->foreignId('proprietaite_id')->constrained();
-          
+            $table->foreignId('typese_propriete_id')->constrained();
+            $table->foreignId('quartier_id')->constrained();
             $table->timestamps();
         });
     }
