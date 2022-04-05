@@ -30,5 +30,8 @@ Route::post('/create',[ProprietaiteController::class,'store'])->name('proprietai
 Route::PUT('/modifier/{id}',[ProprietaiteController::class,'update'])->name('modifier');
 Route::get('/delete/{id}',[ProprietaiteController::class,'delete'])->name('delete');
 Route::get('/showe',[ProprieteController::class,'show'])->name('affiche');
+Route::get('/modifie/{id}',[ProprieteController::class,'update'])->name('update');
+Route::get('/ajouter',[ProprieteController::class,'ajouter'])->name('ajouter');
+Route::post('/enregistrer',[ProprieteController::class,'store'])->name('propriete.store');
 
 

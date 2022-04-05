@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class propriete extends Model
 {
     use HasFactory;
+
+    protected $fillable=['libelet','description','nombreEtage','nombredepiece','adressse','proprietaite_id','typese_propriete_id','quartier_id '];
     public function proprietaite()
     {
        return $this->belongsTo(proprietaite::class);

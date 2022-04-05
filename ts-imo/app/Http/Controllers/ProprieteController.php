@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\proprietaite;
 use App\Models\propriete;
+use App\Models\quartier;
+use App\Models\typese_propriete;
 use Illuminate\Http\Request;
 
 class ProprieteController extends Controller
@@ -35,7 +38,17 @@ class ProprieteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        propriete::create([
+            'libelet'=>$request->libelet,
+            'description'=>$request->description,
+            'nombreEtage'=>$request->nombreEtage,
+            'nombredepiece'=>$request->nombredepiece,
+            'adressse'=>$request->adressse,
+            'proprietaite_id'=>$request->proprietaite_id,
+            'typese_propriete_id'=>$request->typese_propriete_id,
+            'quartier_id '=>$request->quartier_id 
+        ]);
+        return redirect('show');
     }
 
     /**
@@ -59,6 +72,12 @@ class ProprieteController extends Controller
         return view('proprietes.detail',[
             'proprietes'=>$proprietes
         ]);
+    }
+    public function ajouter(){
+         $proprietaite= proprietaite::all();
+         $typese_propriete=typese_propriete::all();
+        $quartier=quartier::all();
+        return view('proprietes.form',compact('quartier','proprietaite','typese_propriete'));
     }
 
     /**

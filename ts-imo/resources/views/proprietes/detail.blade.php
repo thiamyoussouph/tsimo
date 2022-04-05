@@ -36,7 +36,7 @@
 </table> -->
 <div class="col-6 m-5">
 <h1 style="text-align: center; color:green;">modifier</h1>
-    <form method="POST" action="{{Url('modifier/'.$proprietaites->id)}}">
+    <form method="POST" action="{{Url('modifie/'.$propriete->id)}}">
       @csrf
     @method('PUT')
   <fieldset >
@@ -67,7 +67,7 @@
       <input type="text" id="email" class="form-control"name="email"value="{{$proprietaites->email}}" placeholder="email">
     </div>
     
-    <button type="submit" class="btn btn-success">modifier</button>
+    <button type="submit"class="btn btn-success">modifie</button>
   </fieldset>
 </form>
 </div>

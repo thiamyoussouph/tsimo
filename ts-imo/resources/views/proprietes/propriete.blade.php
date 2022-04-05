@@ -8,8 +8,8 @@
     <title>Dff</title>
 </head>
 <body>
-    <h1>liste des proprietaires </h1>
-    <a class="btn btn-success m-4" href="{{route('create')}}">ajoter proprietaire</a>
+    <h1>liste des proprietes </h1>
+    <a class="btn btn-success m-4" href="{{route('ajouter')}}">ajouter</a>
     <section class="m-5">
     <div class="card">
     <div class="card-header text-center">
@@ -40,8 +40,8 @@
       <td>{{$propriete->nombreEtage}}</td>
       <td>{{$propriete->nombredepiece}}</td>
       <td>{{$propriete->adressse}}</td>
-      <!-- <td><a class="btn btn-primary" href="{{route('proprietaire.detail',['id'=> $propriete->id])}}" style="text-decoration: none;">modifier</a>
-      <a class="btn btn-danger" href="{{route('delete',['id'=> $propriete->id])}}" style="text-decoration: none;">suprimer</a></td> -->
+       <td><a class="btn btn-primary" href="{{route('update',['id'=>$propriete->id])}}" style="text-decoration: none;">modifier</a>
+      <a class="btn btn-danger" href="{{route('update',['id'=>$propriete->id])}}" style="text-decoration: none;">suprimer</a></td>
     </tr>
 
     
