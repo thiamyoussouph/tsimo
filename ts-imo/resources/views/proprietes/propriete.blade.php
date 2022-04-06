@@ -41,7 +41,7 @@
       <td>{{$propriete->nombredepiece}}</td>
       <td>{{$propriete->adressse}}</td>
        <td><a class="btn btn-primary" href="{{route('recuperer',['id'=>$propriete->id])}}" style="text-decoration: none;">modifier</a>
-      <a class="btn btn-danger" href="{{route('update',['id'=>$propriete->id])}}" style="text-decoration: none;">suprimer</a></td>
+      <a class="btn btn-danger" href="{{route('suprimer',['id'=>$propriete->id])}}" style="text-decoration: none;">suprimer</a></td>
     </tr>
 
     

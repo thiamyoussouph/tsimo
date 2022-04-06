@@ -31,8 +31,9 @@ Route::PUT('/modifier/{id}',[ProprietaiteController::class,'update'])->name('mod
 Route::get('/delete/{id}',[ProprietaiteController::class,'delete'])->name('delete');
 Route::get('/showe',[ProprieteController::class,'show'])->name('affiche');
 Route::get('/modifier/{id}',[ProprieteController::class,'detaille'])->name('recuperer');
-Route::get('/modifie/{id}',[ProprieteController::class,'update'])->name('update');
+Route::PUT('/modifie/{id}',[ProprieteController::class,'update'])->name('update');
 Route::get('/ajouter',[ProprieteController::class,'ajouter'])->name('ajouter');
 Route::post('/enregistrer',[ProprieteController::class,'store'])->name('propriete.store');
+Route::get('/suprimer/{id}',[ProprieteController::class,'delete'])->name('suprimer');
 
 

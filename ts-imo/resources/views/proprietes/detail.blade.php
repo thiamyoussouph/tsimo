@@ -12,34 +12,35 @@
 <div class="col-6 m-5 ">
 <div class="card list-group list-group-flush">
 <h1 style="text-align: center; color:green;">ajouter propriete</h1>
-    <form method="POST" action="{{route('propriete.store')}}">
-    @csrf
+<form method="POST" action="{{url('modifie/'.$proprietes->id)}}">
+      @csrf
+    @method('PUT')
   <fieldset >
 
     <div class="mb-3 m-5">
       <label for="nom" class="form-label">libelet</label>
      
-      <input type="text" id="nom" class="form-control border-success botder-3" name="libelet"placeholder="Disabl input">
+      <input type="text" id="nom"value="{{$proprietes->libelet}}" class="form-control border-success botder-3" name="libelet"placeholder="Disabl input">
     </div>
     <div class="mb-3 m-5">
       <label for="description" class="form-label">description</label>
-      <input type="text" id="prenom" class="form-control"name="description" placeholder="Disabled input">
+      <input type="text" id="prenom" value="{{$proprietes->description}}" class="form-control"name="description" placeholder="Disabled input">
     </div>
     <div class="mb-3 m-5">
       <label for="nombreEtage" class="form-label">nombreEtage</label>
-      <input type="text" id="adresse" class="form-control"name="nombreEtage" placeholder="Disabled input">
+      <input type="text" id="adresse"  value="{{$proprietes->nombreEtage}}" class="form-control"name="nombreEtage" placeholder="Disabled input">
     </div>
     <div class="mb-3 m-5">
       <label for="nom" class="form-label">nombredepiece</label>
-      <input type="text" id="nombredepiece" class="form-control"name="nombredepiece" placeholder="Disabled input">
+      <input type="text" id="nombredepiece" value="{{$proprietes->nombredepiece}}"class="form-control"name="nombredepiece" placeholder="Disabled input">
     </div>
     <div class="mb-3 m-5">
       <label for="nom" class="form-label">adressse</label>
-      <input type="text" id="adressse" class="form-control"name="adressse" placeholder="adressse">
+      <input type="text" id="adressse" value="{{$proprietes->adressse}}" class="form-control"name="adressse" placeholder="adressse">
     </div>
 
     <div class="mb-3 m-5">
-    <select class="form-select" aria-label="Default select example" name="proprietaite_id">
+    <select class="form-select" aria-label="Default select example" name="proprietaite_id"value="{{$proprietes->proprietaite_id}}">
   <option selected>proprietaire</option>
   @foreach($proprietaite as $proprietaite)
   <option value="{{$proprietaite->id}}">{{$proprietaite->prenom}}</option>
@@ -47,7 +48,7 @@
 </select>
    </div>
     <div class="mb-3 m-5">
-    <select class="form-select" aria-label="Default select example" name="typese_propriete_id">
+    <select class="form-select" aria-label="Default select example" name="typese_propriete_id" value="{{$proprietes->typese_propriete_id}}">
   <option selected>type propriete</option>
   @foreach($typese_propriete as $typese_propriete)
   <option value="{{$typese_propriete->id}}">{{$typese_propriete->appartement}}</option>
@@ -55,7 +56,7 @@
 </select>
     </div>
     <div class="mb-3 m-5">
-    <select class="form-select" aria-label="Default select example" name="quartier_id">
+    <select class="form-select" aria-label="Default select example" name="quartier_id" value="{{$proprietes->description}}">
   <option selected>quartier</option>
   @foreach($quartier as $quartier)
   <option value="{{$quartier->id}}">{{$quartier->libelet}}</option>
@@ -63,7 +64,7 @@
 </select>
     </div>
     
-    <button type="submit" class="btn btn-success m-5">ajouter</button>
+    <button type="submit" class="btn btn-success m-5">modifier</button>
   </fieldset>
 </form>
 </div>

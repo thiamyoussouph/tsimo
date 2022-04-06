@@ -68,10 +68,13 @@ class ProprieteController extends Controller
     public function detaille($id)
     {
         $proprietes=propriete::find($id);
+        $proprietaite= proprietaite::all();
+        $typese_propriete=typese_propriete::all();
+       $quartier=quartier::all();
        
         return view('proprietes.detail',[
             'proprietes'=>$proprietes
-        ]);
+        ],compact('quartier','proprietaite','typese_propriete'));
         return view('proprietes.detail');
     }
     public function ajouter(){
@@ -99,9 +102,19 @@ class ProprieteController extends Controller
      * @param  \App\Models\propriete  $propriete
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, propriete $propriete)
+    public function update(Request $request,$id)
     {
-        //
+        $proprietes=propriete::find($id);
+        $proprietes->libelet=$request->libelet;
+        $proprietes->description=$request->description;
+        $proprietes->nombreEtage=$request->nombreEtage;
+        $proprietes->nombredepiece=$request->nombredepiece;
+        $proprietes->adressse=$request->adressse;
+        $proprietes->proprietaite_id=$request->proprietaite_id;
+        $proprietes->typese_propriete_id=$request->typese_propriete_id;
+        $proprietes->quartier_id=$request->quartier_id;
+        $proprietes->update();
+        return redirect()->route('affiche');
     }
 
     /**
@@ -110,8 +123,12 @@ class ProprieteController extends Controller
      * @param  \App\Models\propriete  $propriete
      * @return \Illuminate\Http\Response
      */
-    public function destroy(propriete $propriete)
-    {
-        //
-    }
+
+  public function delete($id)
+  {
+    $propriete=propriete::find($id);
+    $propriete->delete();
+     return redirect('show');
+     }
+  
 }
