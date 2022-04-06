@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\proprietaite;
+use Illuminate\Auth\Events\Login;
 use Illuminate\Http\Request;
 
 class ProprietaiteController extends Controller
@@ -14,7 +15,7 @@ class ProprietaiteController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -119,6 +120,6 @@ class ProprietaiteController extends Controller
     {
         $proprietaite=proprietaite::find($id);
         $proprietaite->delete();
-        return redirect('show');
+        return redirect('show'); 
     }
 }

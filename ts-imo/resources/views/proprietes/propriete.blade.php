@@ -22,7 +22,6 @@
     <tr>
       <th scope="col">libelet</th>
       <th scope="col ">description</th>
-      <th scope="col">adresse</th>
       <th scope="col">nombreEtage</th>
       <th scope="col">nombredepiece</th>
       <th scope="col">adressse</th>
@@ -31,12 +30,9 @@
     </tr>
   </thead>
     @foreach($proprietes as $propriete)
-
-    <tr>
-     
+     <tr>
       <td>{{$propriete->libelet}}</td>
       <td>{{$propriete->description}}</td>
-      <td>{{$propriete->adresse}}</td>
       <td>{{$propriete->nombreEtage}}</td>
       <td>{{$propriete->nombredepiece}}</td>
       <td>{{$propriete->adressse}}</td>
