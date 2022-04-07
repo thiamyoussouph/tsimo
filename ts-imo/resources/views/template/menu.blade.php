@@ -27,11 +27,13 @@
 
 
         </ul>
+        <ul ">
         <form action="{{route('logout')}}" method="post">
           @csrf
           <input type="submit" value="se deconnecter">
         </form>
       {{Auth::user()->name}}
+      </ul>
       </div>
     </div>
   </nav>

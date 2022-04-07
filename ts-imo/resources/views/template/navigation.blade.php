@@ -1,75 +1,43 @@
-<div class="left-sidebar-pro">
-    <nav id="sidebar" class="">
-        <div class="sidebar-header">
-            <a href="index.html"><img class="main-logo" src="img/logo/logo-tsimo.jpg" alt="" /></a>
-        </div>
-        <div class="nalika-profile">
-            <div class="profile-dtl">
-                <a href="#"><img src="tasnim/img/notification/4.jpg" alt="" /></a>
-                <h2>TASNIM IMMO</h2>
-            </div>
-            <div class="profile-social-dtl">
-                <ul class="dtl-social">
-                    <li>
-                        <a href="#"><i class="icon nalika-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="icon nalika-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="icon nalika-linkedin"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="left-custom-menu-adp-wrap comment-scrollbar">
-            <nav class="sidebar-nav left-sidebar-menu-pro">
-                <ul class="metismenu" id="menu1">
-                    <li class="active">
-                        <a class="has-arrow" href="show">
-                            <i class="icon nalika-home icon-wrap"></i>
-                            <span>proprietaire</span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a class="has-arrow" href="create">
-                            <i class="icon nalika-home icon-wrap"></i>
-                            <span>ajouter proprietaire</span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a class="has-arrow" href="showe">
-                            <i class="icon nalika-home icon-wrap"></i>
-                            <span>proprietes</span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a class="has-arrow" href="ajouter">
-                            <i class="icon nalika-home icon-wrap"></i>
-                            <span>ajouter proprietes</span>
-                        </a>
-                    </li>
+@include('template.entete')
 
-                    <li id="removable">
-                        <a class="has-arrow" href="#" aria-expanded="false"><i class="icon nalika-new-file icon-wrap"></i>
-                            <span class="mini-click-non">Pages</span></a>
-                        <ul class="submenu-angle" aria-expanded="false">
-                            <li>
-                                <a title="Login" href="login.html"><span class="mini-sub-pro">Login</span></a>
-                            </li>
-                            <li>
-                                <a title="Register" href="register.html"><span class="mini-sub-pro">Register</span></a>
-                            </li>
-                            <li>
-                                <a title="Lock" href="lock.html"><span class="mini-sub-pro">Lock</span></a>
-                            </li>
-                            <li>
-                                <a title="Password Recovery" href="password-recovery.html"><span class="mini-sub-pro">Password Recovery</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </nav>
+<nav class="navbar navbar-dark bg-success">
+  <nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">acceuil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{{route('afficher')}}">proprietaire</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{{route('affiche')}}">propriete</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{{route('ajouter')}}">ajoute peroprietaire</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{{route('proprietaire.store')}}">ajoute peroprietes</a>
+          </li>
+
+            <li>
+            @auth
+                      
+                        
+                    @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline btn btn-success"style="text-decoration:none;color:white;">connection</a>
+
+                        @if (Route::has('register'))
+                           <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline  btn btn-success"style="text-decoration:none;color:white;">s enregistrer</a>
+                        @endif
+                    @endauth
+            </li>
+    </div>
+  </nav>
+</nav>
 </div>

@@ -1,5 +1,5 @@
 @include('template.entete')
-<!-- @include('template.navigation') -->
+
 @include('template.menu')
 
 
@@ -29,7 +29,7 @@
 
 
         <tr>
-          <td><a style="text-decoration: none;" href="{{route('proprietaire.detail',['id'=> $proprietaite->id])}}">{{$proprietaite->prenom}}</a></td>
+          <td>{{$proprietaite->prenom}}</td>
           <td>{{$proprietaite->nom}}</td>
           <td>{{$proprietaite->adresse}}</td>
           <td>{{$proprietaite->telephone}}</td>

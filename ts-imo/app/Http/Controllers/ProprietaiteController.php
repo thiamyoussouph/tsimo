@@ -15,7 +15,11 @@ class ProprietaiteController extends Controller
      */
     public function index()
     {
-        
+        $proprietaites=proprietaite::all();
+
+        return view('welcome',[
+            'proprietaites'=>$proprietaites
+    ]);
     }
 
     /**
@@ -70,6 +74,7 @@ class ProprietaiteController extends Controller
             'proprietaites'=>$proprietaites
     ]);
     }
+    
     public function detail($id)
     {
         $proprietaites=proprietaite::find($id);

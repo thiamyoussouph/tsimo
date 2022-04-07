@@ -1,3 +1,4 @@
+@include('template.navigation')
 <div class="relative flex items-top justify-center min-h-screen bg-gray-100 ">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -64,7 +65,7 @@
                     {{ __('Already registered?') }}
                 </a>
 
-                <x-button class="ml-4">
+                <x-button class="ml-4 " style="background-color: green;">
                     {{ __('Register') }}
                 </x-button>
             </div>

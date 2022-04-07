@@ -1,7 +1,8 @@
+@include('template.navigation')
 <div class="relative flex items-top justify-center min-h-screen bg-gray-100 ">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
+                    <!-- @auth
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                         
                         
@@ -10,7 +11,7 @@
 
                         @if (Route::has('register'))
                            <button > <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline"style="background-color: green;color:white;">s enregistrer</a></button>
-                        @endif
+                        @endif -->
                     @endauth
                 </div>
             @endif

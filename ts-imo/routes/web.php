@@ -15,23 +15,23 @@ use App\Http\Controllers\ProprietaiteController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('ecuil');;
-
+// Route::get('/', function () {
+//     return view('welcome');i
+// })->name('ecuil');;
+Route::get('/', [ProprietaiteController::class, 'index'])->name('ecuil');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 require __DIR__ . '/auth.php';
-Route::get('/show', [ProprietaiteController::class, 'show'])->name('afficher');
-Route::get('/detail/{id}', [ProprietaiteController::class, 'detail'])->name('proprietaire.detail');
-Route::get('/create', [ProprietaiteController::class, 'create'])->name('create');
-Route::post('/create', [ProprietaiteController::class, 'store'])->name('proprietaire.store');
-Route::PUT('/modifier/{id}', [ProprietaiteController::class, 'update'])->name('modifier');
-Route::get('/delete/{id}', [ProprietaiteController::class, 'delete'])->name('delete');
-Route::get('/showe', [ProprieteController::class, 'show'])->name('affiche');
-Route::get('/modifier/{id}', [ProprieteController::class, 'detaille'])->name('recuperer');
-Route::PUT('/modifie/{id}', [ProprieteController::class, 'update'])->name('update');
-Route::get('/ajouter', [ProprieteController::class, 'ajouter'])->name('ajouter');
-Route::post('/enregistrer', [ProprieteController::class, 'store'])->name('propriete.store');
-Route::get('/suprimer/{id}', [ProprieteController::class, 'delete'])->name('suprimer');
+Route::get('/show', [ProprietaiteController::class, 'show'])->middleware(['auth'])->name('afficher');
+Route::get('/detail/{id}', [ProprietaiteController::class, 'detail'])->middleware(['auth'])->name('proprietaire.detail');
+Route::get('/create', [ProprietaiteController::class, 'create'])->middleware(['auth'])->name('create');
+Route::post('/create', [ProprietaiteController::class, 'store'])->middleware(['auth'])->name('proprietaire.store');
+Route::PUT('/modifier/{id}', [ProprietaiteController::class, 'update'])->middleware(['auth'])->name('modifier');
+Route::get('/delete/{id}', [ProprietaiteController::class, 'delete'])->middleware(['auth'])->name('delete');
+Route::get('/showe', [ProprieteController::class, 'show'])->middleware(['auth'])->name('affiche');
+Route::get('/modifier/{id}', [ProprieteController::class, 'detaille'])->middleware(['auth'])->name('recuperer');
+Route::PUT('/modifie/{id}', [ProprieteController::class, 'update'])->middleware(['auth'])->name('update');
+Route::get('/ajouter', [ProprieteController::class, 'ajouter'])->middleware(['auth'])->name('ajouter');
+Route::post('/enregistrer', [ProprieteController::class, 'store'])->middleware(['auth'])->name('propriete.store');
+Route::get('/suprimer/{id}', [ProprieteController::class, 'delete'])->middleware(['auth'])->name('suprimer');
