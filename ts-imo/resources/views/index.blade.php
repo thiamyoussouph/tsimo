@@ -18,7 +18,7 @@
     <title>Document</title>
 </head>
 <body>
- 
+ @extends('layouts.navigation')
             <!--  Header -->
 
              <!-- End Header -->
